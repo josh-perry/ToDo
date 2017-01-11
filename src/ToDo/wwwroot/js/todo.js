@@ -1,24 +1,23 @@
-﻿$(document).ready(function () {
-    // Source: https://jsfiddle.net/briguy37/2MVFd/
-    function generateUuid() {
-        var d = new Date().getTime();
-        var uuid = 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
-            var r = (d + Math.random()*16)%16 | 0;
-            d = Math.floor(d/16);
-            return (c=='x' ? r : (r&0x3|0x8)).toString(16);
-        });
-        return uuid;
-    };
+﻿// Source: https://jsfiddle.net/briguy37/2MVFd/
+function generateUuid() {
+    var d = new Date().getTime();
+    var uuid = 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function (c) {
+        var r = (d + Math.random() * 16) % 16 | 0;
+        d = Math.floor(d / 16);
+        return (c == 'x' ? r : (r & 0x3 | 0x8)).toString(16);
+    });
+    return uuid;
+}
+
+$(document).ready(function () {
+    var source = $("#todo-item-template").html();
+    var template = Handlebars.compile(source);
+    var items = $("#todo-items");
 
     function getItemByItemId(id) {
         var item = $(".todo-item[item-id='" + id + "']");
         return item;
     }
-
-    var source = $("#todo-item-template").html();
-    var template = Handlebars.compile(source);
-
-    var items = $("#todo-items");
 
     function addItem(description) {
         var context = {
@@ -30,7 +29,7 @@
         items.append(html);
     }
 
-    $(document).on("click", ".new-task-add", function () {
+    function addNewTask() {
         // Get description textarea
         var descBox = $("#new-task-description");
 
@@ -44,6 +43,16 @@
 
         // Clear the text area
         descBox.val("");
+    }
+
+    $("#new-task-description").keydown(function(key) {
+        if (key.ctrlKey && key.keyCode === 13) {
+            addNewTask();
+        }
+    });
+
+    $(document).on("click", ".new-task-add", function () {
+        addNewTask();
     });
 
     // Click event listener for all item done buttons

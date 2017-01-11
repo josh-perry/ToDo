@@ -35,21 +35,6 @@ h2 {
     transform: translateY(-50%);
 }
 
-.todo-item-checkbox {
-
-}
-
-.todo-item-description {
-    
-}
-
-.todo-item-delete {
-}
-
-.todo-item-done {
-    
-}
-
 .wrapper {
     background: #97bcdc;
     padding: 32px;
@@ -57,9 +42,6 @@ h2 {
 
 .strikeout {
     text-decoration: line-through;
-}
-
-.new-task {
 }
 
 #new-task-description {
