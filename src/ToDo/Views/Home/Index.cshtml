@@ -4,15 +4,15 @@
 
 <script id="todo-item-template" type="text/x-handlebars-template">
     <div class="todo-item row" item-id="{{item-id}}">       
-        <div class="todo-item-description col-sm-10 vertical-center">
+        <div class="todo-item-description col-sm-10 col-xs-8 vertical-center">
             {{description}}
         </div>
         
-        <a class="col-sm-1 todo-item-done vertical-center btn btn-success" item-id="{{item-id}}">
+        <a class="col-sm-1 col-xs-2 todo-item-done vertical-center btn btn-success" item-id="{{item-id}}">
             <i class="fa fa-check" aria-hidden="true"></i>
         </a>
 
-        <a class="col-sm-1 todo-item-delete vertical-center btn btn-danger" item-id="{{item-id}}">
+        <a class="col-sm-1 col-xs-2 todo-item-delete vertical-center btn btn-danger" item-id="{{item-id}}">
             <i class="fa fa-trash" aria-hidden="true"></i>
         </a>
     </div>
