@@ -3,16 +3,16 @@
 }
 
 <script id="todo-item-template" type="text/x-handlebars-template">
-    <div class="todo-item row">       
+    <div class="todo-item row" item-id="{{item-id}}">       
         <div class="todo-item-description col-sm-10 vertical-center">
             {{description}}
         </div>
         
-        <a href="#" class="todo-item-checkbox col-sm-1 vertical-center btn btn-success">
+        <a href="#" class="col-sm-1 todo-item-done vertical-center btn btn-success" item-id="{{item-id}}">
             <i class="fa fa-check" aria-hidden="true"></i>
         </a>
 
-        <a href="#" class="col-sm-1 todo-item-delete vertical-center btn btn-danger">
+        <a href="#" class="col-sm-1 todo-item-delete vertical-center btn btn-danger" item-id="{{item-id}}">
             <i class="fa fa-trash" aria-hidden="true"></i>
         </a>
     </div>

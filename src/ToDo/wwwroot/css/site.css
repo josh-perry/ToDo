@@ -46,7 +46,15 @@ h2 {
 .todo-item-delete {
 }
 
+.todo-item-done {
+    
+}
+
 .wrapper {
     background: #97bcdc;
     padding: 32px;
+}
+
+.strikeout {
+    text-decoration: line-through;
 }
