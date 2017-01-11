@@ -42,6 +42,11 @@ h2 {
 
 .strikeout {
     text-decoration: line-through;
+    color: #9a9a9a;
+}
+
+.item-done {
+    background: #bbd5ec;
 }
 
 #new-task-description {

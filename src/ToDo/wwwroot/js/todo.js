@@ -10,10 +10,13 @@ function generateUuid() {
 }
 
 $(document).ready(function () {
+    // Precompile the to do item template
     var source = $("#todo-item-template").html();
     var template = Handlebars.compile(source);
+
     var items = $("#todo-items");
 
+    // Get to do item from the ID assigned when created
     function getItemByItemId(id) {
         var item = $(".todo-item[item-id='" + id + "']");
         return item;
@@ -45,12 +48,14 @@ $(document).ready(function () {
         descBox.val("");
     }
 
+    // If ctrl + enter is hit then add the task
     $("#new-task-description").keydown(function(key) {
         if (key.ctrlKey && key.keyCode === 13) {
             addNewTask();
         }
     });
 
+    // New task button click handler
     $(document).on("click", ".new-task-add", function () {
         addNewTask();
     });
@@ -66,6 +71,7 @@ $(document).ready(function () {
 
         // Toggle strike-through
         description.toggleClass("strikeout");
+        item.toggleClass("item-done");
     });
 
     // Click event listener for all item delete buttons
