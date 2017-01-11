@@ -56,3 +56,7 @@ h2 {
 .new-task-add {
     text-align: right;
 }
+
+.todo-item-delete, .todo-item-done {
+    display: none;
+}

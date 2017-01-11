@@ -86,4 +86,16 @@ $(document).ready(function () {
             item.remove();
         });
     });
+
+    $("body").on({
+        mouseenter: function () {
+            $(this).find(".todo-item-done").fadeIn("fast");
+            $(this).find(".todo-item-delete").fadeIn("fast");
+
+        },
+        mouseleave: function () {
+            $(this).find(".todo-item-done").fadeOut("fast");
+            $(this).find(".todo-item-delete").fadeOut("fast");
+        }
+    }, ".todo-item");
 });
