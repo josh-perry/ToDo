@@ -8,11 +8,11 @@
             {{description}}
         </div>
         
-        <a href="#" class="col-sm-1 todo-item-done vertical-center btn btn-success" item-id="{{item-id}}">
+        <a class="col-sm-1 todo-item-done vertical-center btn btn-success" item-id="{{item-id}}">
             <i class="fa fa-check" aria-hidden="true"></i>
         </a>
 
-        <a href="#" class="col-sm-1 todo-item-delete vertical-center btn btn-danger" item-id="{{item-id}}">
+        <a class="col-sm-1 todo-item-delete vertical-center btn btn-danger" item-id="{{item-id}}">
             <i class="fa fa-trash" aria-hidden="true"></i>
         </a>
     </div>
@@ -21,6 +21,11 @@
 <h2>To Do</h2>
 
 <div class="wrapper">
+    <div class="new-task">
+        <textarea id="new-task-description"></textarea>
+        <a class="btn btn-default new-task-add">Add</a>
+    </div>
+
     <div id="todo-items">
 
     </div>

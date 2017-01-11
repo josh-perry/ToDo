@@ -20,9 +20,9 @@
 
     var items = $("#todo-items");
 
-    for (var i = 0; i < 4; i++) {
+    function addItem(description) {
         var context = {
-            "description": "Lorem ipsum " + i,
+            "description": description,
             "item-id": generateUuid()
         }
 
@@ -30,8 +30,24 @@
         items.append(html);
     }
 
+    $(document).on("click", ".new-task-add", function () {
+        // Get description textarea
+        var descBox = $("#new-task-description");
+
+        // If the description is only whitespace, then ignore it
+        if ($.trim(descBox.val()) === "") {
+            return;
+        }
+
+        // Get description from textarea and add item 
+        addItem(descBox.val());
+
+        // Clear the text area
+        descBox.val("");
+    });
+
     // Click event listener for all item done buttons
-    $(document).on("click", ".todo-item-done", function () {
+    $(document).on("click", ".todo-item-done", function() {
         // Get item to strike through by it's item-id
         var id = $(this).attr("item-id");
         var item = getItemByItemId(id);
@@ -44,7 +60,7 @@
     });
 
     // Click event listener for all item delete buttons
-    $(document).on("click", ".todo-item-delete", function () {
+    $(document).on("click", ".todo-item-delete", function() {
         // Get item to remove by it's item-id
         var id = $(this).attr("item-id");
         var item = getItemByItemId(id);

@@ -58,3 +58,14 @@ h2 {
 .strikeout {
     text-decoration: line-through;
 }
+
+.new-task {
+}
+
+#new-task-description {
+    width: 100%;
+}
+
+.new-task-add {
+    text-align: right;
+}
